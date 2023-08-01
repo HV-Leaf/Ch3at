@@ -1,0 +1,959 @@
+
+<!DOCTYPE html>
+<html lang='en' class=''>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Ch3at Book</title>
+
+ 
+ 
+
+  
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <style class="INLINE_PEN_STYLESHEET_ID">
+    @import "https://fonts.googleapis.com/css?family=Fira+Sans:300,400";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #000000;
+  font-family: "Fira Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.875em;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  width: 100vw;
+  transition: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-top {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 101;
+  padding: 10px 20px;
+  width: 100%;
+  height: 50px;
+  background-color: #A7A7A7;
+}
+.nav-top .hamburger {
+  margin-left: auto;
+  color: #707070;
+  cursor: pointer;
+}
+
+.nav-drill {
+  margin-top: 50px;
+  transform: translateX(100%);
+}
+
+.nav-is-toggled .nav-drill {
+  transform: translateX(0);
+}
+.nav-is-toggled::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-drill {
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #000000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  transition: 0.45s;
+}
+.nav-items {
+  flex: 0 0 100%;
+}
+.nav-item:not(:last-child) {
+  border-bottom: solid 1px #A7A7A7;
+}
+.nav-link {
+  display: block;
+  padding: 0.875em 1em;
+  background-color: #707070;
+  color: #FFF;
+  font-size: 1rem;
+  line-height: 1.5em;
+  font-weight: 300;
+}
+.nav-expand-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  background-color: #A7A7A7;
+  transition: 0.3s;
+  visibility: hidden;
+}
+.nav-expand-content .nav-item:not(:last-child) {
+  border-bottom: solid 1px #A7A7A7;
+}
+.nav-expand-content .nav-link {
+  background-color: #A7A7A7
+}
+.nav-expand-content .nav-back-link {
+  display: flex;
+  align-items: center;
+  background-color: #707070 !important;
+  color: #fff;
+}
+.nav-expand-content .nav-back-link::before {
+  content: "chevron_left";
+  margin-right: 0.5em;
+  font-family: "Material Icons";
+}
+.nav-expand-link {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-expand-link::after {
+  content: "chevron_right";
+  flex: 0 1 auto;
+  font-family: "Material Icons";
+}
+.nav-expand.active > .nav-expand-content {
+  transform: translateX(0);
+  visibility: visible;
+}
+.nav-expand .nav-expand-content {
+  background-color: #000000;
+}
+.nav-expand .nav-expand-content .nav-link {
+  background-color: #A7A7A7;
+}
+.nav-expand .nav-expand-content .nav-expand-content {
+  background-color: #000000;
+}
+.nav-expand .nav-expand-content .nav-expand-content .nav-link {
+  background-color: #A7A7A7;
+}
+.nav-expand .nav-expand-content .nav-expand-content .nav-expand-content {
+  background-color: #FF0000;
+}
+.nav-expand .nav-expand-content .nav-expand-content .nav-expand-content .nav-link {
+  background-color: #FF0000;
+}
+.nav-expand .nav-expand-content .nav-expand-content .nav-expand-content .nav-expand-content {
+  background-color: #FF0000;
+}
+.nav-expand .nav-expand-content .nav-expand-content .nav-expand-content .nav-expand-content .nav-link {
+  background-color: #FF0000;
+}
+
+  </style>
+</head>
+
+<body class="nav-is-toggled">
+  <header class="nav-top"> <marquee>Welcome to the Ch3at Book</marquee> 
+	<span class="hamburger material-icons" id="ham">menu</span>
+</header>
+<nav class="nav-drill">
+    
+    
+<!--START PS1 CATALOG-->    
+	<ul class="nav-items nav-level-1">
+		<li class="nav-item nav-expand">
+			<a class="nav-link nav-expand-link" href="#">
+<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/logo.png" height=64 width=64>
+			</a>
+			<ul class="nav-items nav-expand-content">
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/logo.png" height=64 width=64>
+					</a>
+				</li>
+				
+				<li class="nav-item nav-expand">
+					<a class="nav-link nav-expand-link" href="#">
+						007 Racing
+					</a>
+					<ul class="nav-items nav-expand-content">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/covers/007%20racing.jpg" height=128 width=128>	
+								
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+Unlock All Codes <br><p style="color:RED">Mission Mode Name:</p> <p style="color:yellow">MMMQRRQ</p>
+                            </a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+Tall pedestrians <br><p style="color:RED">Mission Mode Name:</p> <p style="color:yellow">LEMKE</p>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+Aston Martin Vantage in multi-player mode <br><p style="color:RED">At the title screen</p>
+<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32>
+<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R1.png" height=32 width=32>
+<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32>
+<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32>
+<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/X.png" height=32 width=32>
+							</a>
+						</li>						
+						</ul>
+						
+						
+					<li class="nav-item nav-expand">
+					<a class="nav-link nav-expand-link" href="#">
+						007: Tomorrow Never Dies
+					</a>
+					<ul class="nav-items nav-expand-content">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/covers/007tomorrow.jpg" height=128 width=128>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Live Forever<br>
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Level Skip<br>
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Unknown<br>
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32>
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/square.png" height=32 width=32>	
+							<br>Or<br>
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R1.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R1.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R1.png" height=32 width=32> 
+							
+					 	</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Activate Debug Info<br>
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L2.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R2.png" height=32 width=32>
+							</a>
+						</li>
+						
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Deactivate Debug Info<br>
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R2.png" height=32 width=32>
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L2.png" height=32 width=32> 
+							</a>
+						</li>
+						
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								View Boundaries<br>
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 	
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/square.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/square.png" height=32 width=32> 	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+							Remove On-screen Displays<br>
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 	
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/left.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/right.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+							Remove Fire<br>
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 	
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R1.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R1.png" height=32 width=32> 
+							
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Remove All Surface Textures<br>
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 	
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Remove All Objects<br>
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 	
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/square.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/square.png" height=32 width=32> 
+								
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Complete Current Mission<br>
+                                <img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 	
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Exit Door Any Time<br>
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+									<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/square.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/square.png" height=32 width=32> 
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Freeze All Objects<br>
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 	
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Run Faster<br>
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 	
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/square.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/square.png" height=32 width=32> 	
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Cheat Camera<br>
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 	
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R2.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R2.png" height=32 width=32> 		
+								<br>
+								<p style="color:yellow"> <img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R1.png" height=32 width=32> to move forward</p>
+								<p style="color:yellow"><img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> to move backward</p>
+								<p style="color:yellow"><img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L2.png" height=32 width=32> to move left</p>
+								<p style="color:yellow"><img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R2.png" height=32 width=32> to move right</p>
+								<p style="color:yellow"><img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> to move up</p>
+								<p style="color:yellow"><img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/X.png" height=32 width=32> to move down</p>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Ethereal Mode<br>
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 	
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 	
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 	
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 		
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Minimum Health<br>
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/down.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/down.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/up.png" height=32 width=32> 
+						
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Maximum Health<br>
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 			
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/up.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/up.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/down.png" height=32 width=32>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								All Weapons + 50 Med Kits<br>
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R1.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R1.png" height=32 width=32>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Invincibility<br>
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Unlock all FMV sequences<br>
+								<p style="color:RED">At the main menu</p>
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 
+					    <img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 	
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Unlock All Missions<br>
+                        <p style="color:RED">At the main menu</p>
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 		
+							<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 	
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 	
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Walk Through Walls<br>
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/select.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/triangle.png" height=32 width=32> 
+							</a>
+						</li>
+						
+						<!--LONG LIST NEEDED EMPTY FRAME-->	
+							<li class="nav-item">
+							<a class="nav-link" href="#">
+							<br>
+							</a>
+						</li>
+						</ul>
+					
+					<li class="nav-item nav-expand">
+					<a class="nav-link nav-expand-link" href="#">
+						1 on 1
+					</a>
+					<ul class="nav-items nav-expand-content">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/covers/1on1.jpg" height=128 width=128>
+							</a>
+						</li>
+
+
+                            <li class="nav-item">
+							<a class="nav-link" href="#">
+							<p style="color:red">Gameshark Codes</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+P1 Scores Easily<br><p style="color:yellow">8019BBA4 000A</p> 
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+							P2 Scores 0<br><p style="color:yellow">8019BBA2 0000</p> 
+
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+							Timer Stops at 60.0<br><p style="color:yellow">8019BB90 0E11</p> 
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+							Unlock All Hidden Players<br><p style="color:yellow">8019BC68 0007</p> 
+							</a>
+						</li>
+						
+												<li class="nav-item">
+							<a class="nav-link" href="#">
+Unlock All Pictures in Omake Mode<br><p style="color:yellow">8019BC6A 07FF</p>
+							</a>
+						</li>
+					</ul>
+					
+					
+					<li class="nav-item nav-expand">
+					<a class="nav-link nav-expand-link" href="#">
+						102 Dalmatians: Puppies to the Rescue
+					</a>
+					<ul class="nav-items nav-expand-content">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/covers/102dal.jpg" height=128 width=128>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Level 2 Password<br>
+							<p style="color:yellow">Dice, Bone, Bone, Dice</p>	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Level 3 Password<br>
+							<p style="color:yellow">Dice, Key, Bone, Machine</p>	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Level 4 Password<br>
+							<p style="color:yellow">Dice, Bone, Bowl, Toy</p>	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Level 5 Password<br>
+							<p style="color:yellow">Bone, Dice, Dog, Bone</p>	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Level 6 Password<br>
+							<p style="color:yellow">Bone, Dice, Machine, Bowl</p>	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Level 7 Password<br>
+							<p style="color:yellow">Bone, Bone, Paw, Dog</p>	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Cafeteria Level<br>
+							<p style="color:yellow">Domino, Bone, Key, Paw</p>	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Final Level - Cruella<br>
+							<p style="color:yellow">Toy, Bone, Bone, Bone</p>	
+							</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Unlimited Lives<br>
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/start.png" height=32 width=32> 	 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 	 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R2.png" height=32 width=32> 	 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/square.png" height=32 width=32> 	 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/O.png" height=32 width=32> 	 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R2.png" height=32 width=32> 
+			            <img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L2.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/R1.png" height=32 width=32> 
+						<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/L1.png" height=32 width=32> 
+						</a>
+						</li>
+
+
+                            <li class="nav-item">
+							<a class="nav-link" href="#">
+							<p style="color:red">Gameshark Codes</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+                        Infinite Lives<br><p style="color:yellow">8001DB40 2400 </p> 
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+							Infinite Health<br><p style="color:yellow">8001DF94 2400</p> 
+
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+							All Puppies Found<br><p style="color:yellow">8007E1AC 0006 </p> 
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+							All Bones Found<br><p style="color:yellow">8007E23C 0064</p> 
+							</a>
+						</li>
+						
+												<li class="nav-item">
+							<a class="nav-link" href="#">
+Unlock All Levels & Mini-Games<br><p style="color:yellow">8007E5F8 001F</p>
+							</a>
+						</li>
+					</ul>
+					
+
+					<li class="nav-item nav-expand">
+					<a class="nav-link nav-expand-link" href="#">
+						3D Baseball
+					</a>
+					<ul class="nav-items nav-expand-content">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps1/covers/3dbaseball.jpg" height=128 width=128>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+							<p style="color:red">Gameshark Codes</p>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+                        Infinite Strikes  <br>
+                        <p style="color:yellow">300B5924 0000 </p> 
+						</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+                        1 Strike And You Are Out <br>
+                        <p style="color:yellow">D00B5924 0000<br>
+                        300B5924 0002</p> 
+						</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+                        2 Strikes And You Are Out  <br>
+                        <p style="color:yellow">D00B5924 0000<br>
+                        300B5924 0001 </p> 
+						</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+                        Infinite Balls  <br>
+                        <p style="color:yellow">300B5923 0000 </p> 
+						</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+                        1 Ball And You Walk   <br>
+                        <p style="color:yellow">D00B5922 0000<br>
+                        300B5923 0003 </p> 
+						</a>
+						</li>
+						
+						
+                        <li class="nav-item">
+							<a class="nav-link" href="#">
+                        2 Balls And You Walk    <br>
+                        <p style="color:yellow">D00B5922 0000<br>
+                        300B5923 0002  </p> 
+						</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+                        3 Balls And You Walk    <br>
+                        <p style="color:yellow">D00B5922 0000<br>
+                        300B5923 0001  </p> 
+						</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+                        Infinite Outs   <br>
+                        <p style="color:yellow">300B5925 0000</p> 
+						</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+                        1 Out And You Are Out   <br>
+                        <p style="color:yellow">D00B5924 0000<br>
+                        300B5925 0002   </p> 
+						</a>
+						</li>
+						
+						
+                        <li class="nav-item">
+							<a class="nav-link" href="#">
+                        2 Outs And You Are Out   <br>
+                        <p style="color:yellow">D00B5924 0000<br>
+                        300B5925 0001   </p> 
+						</a>
+						</li>
+
+					</ul>
+					
+<li class="nav-item nav-expand">
+					<a class="nav-link nav-expand-link" href="#">
+						Playstation Game
+					</a>
+					<ul class="nav-items nav-expand-content">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Playstation Game Cheats
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Playstation Game Cheat 1
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Playstation Game Cheat 2
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Playstation Game Cheat 3
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Playstation Game Cheat 4
+							</a>
+						</li>
+					</ul>					
+					
+					
+					
+					
+					
+<!--END PS1 CATALOG-->	
+
+<!--START PS2 CATALOG-->
+				</li>
+			</ul>
+			<ul class="nav-items nav-level-1">
+				<li class="nav-item nav-expand">
+					<a class="nav-link nav-expand-link" href="#">
+<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps2/logo.png" height=32 width=128>
+					</a>
+					<ul class="nav-items nav-expand-content">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+<img class="fit-picture" src="https://ch3at.000webhostapp.com/ch3ticons/ps2/logo.png" height=32 width=128>
+							</a>
+						</li>
+						<li class="nav-item nav-expand">
+							<a class="nav-link nav-expand-link" href="#">
+								Playstation 2 Game 1
+							</a>
+							<ul class="nav-items nav-expand-content">
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Playstation 2 Game 1 Cheats
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Playstation 2 Game 1 Cheat 1
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Playstation 2 Game 1 Cheat 2
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Playstation 2 Game 1 Cheat 3
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Playstation 2 Game 1 Cheat 4
+									</a>
+								</li>
+							</ul>
+<!--END PS2 CATALOG-->
+
+
+
+							
+							
+</nav>
+<script src="https://ch3at.000webhostapp.com/backend.js"></script>
+
+
+  </body>
+
+
+</html>
