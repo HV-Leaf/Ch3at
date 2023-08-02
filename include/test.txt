@@ -1,0 +1,4 @@
+<label style="text-align: left;">
+    <p style="margin-bottom: -15px;">Test code for web development</p>
+    <p style="color: red; display: inline; margin: 0;">this is every button</p>
+    <p style="color: yellow; display: inline; margin: 0;">(PX)(PO)(T)(SQ)(UP)(DOWN)(LEFT)(RIGHT)(PSTART)(PSELECT)(PL1)(PL2)(L3)(PR1)(PR2)(R3)</p>
