@@ -1,877 +1,424 @@
-
 <!DOCTYPE html>
-<html lang='en' class=''>
-
+<html>
 <head>
-  <meta charset='UTF-8'>
-  <title>Ch3at Book</title>  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <style class="INLINE_PEN_STYLESHEET_ID">
-    @import "https://fonts.googleapis.com/css?family=Fira+Sans:300,400";
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
-* {
-.nav-drill {
-  position: fixed;
-  top: 20px;
-  width: 100%;
-  height: 100%; 
-  background-color: #000000;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  transition: 0.45s;
-}
-.nav-items {
-  flex: 0 0 100%;
-}
-.nav-item:not(:last-child) {
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    background-color: #333;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: white; /* Make all text white */
+  }
+  .wrapper {
+    width: 100%; /* Adjusted width to fill the screen */
+    height: 100vh; /* Adjusted height to fill the screen */
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+  
+  nav .m-menu__checkbox {
+    display: none;
+  }
+  nav label.m-menu__toggle {
+    cursor: pointer;
+  }
+  nav .m-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjusted width to fill the screen */
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.35s;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #99AAB5;
+  }
+  nav .m-menu__header {
+    padding: 0 16px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* Removed the border-bottom property */
+  }
+  nav .m-menu__header span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    background-color: #99AAB5; /* Add this line to set the background color */
+  }
+  nav .m-menu .m-menu {
+    transform: translate3d(100%, 0, 0); /* Changed to 100% */
+  }
+  nav .m-menu ul {
+    height: 100%;
+    overflow-y: auto;
+    background-color: #B9BBBE; /* Add this line to set the background color */
+  }
+  nav .m-menu ul li a, nav .m-menu ul li label {
+    display: block;
+    text-align: left;
+    padding: 0 15px;
+    line-height: 47px;
+    text-decoration: none;
+    /* Removed the color property */
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+  }
+ nav .m-menu ul li label.a-label__chevron::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-color: #333;
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
+    top: 50%;
+    margin-top: -5px;
+    right: 16px;
+  }
+  nav .m-menu ul li .-invisible {
+    border-bottom: 0;
+  }
+  nav .m-menu .m-menu label.m-menu__toggle {
+    display: flex;
+    border-bottom: 0;
+    padding: 0;
+    box-sizing: content-box;
+  } 
+  nav .m-menu__checkbox:checked ~ .m-menu {
+    transform: translate3d(0, 0, 0);
+  }
+</style>
+</head>
 
-}
-.nav-link {
-  display: block;
-  padding: 0.875em 1em;
-  background-color: #707070;
-  color: #FFF;
-  font-size: 1rem;
-  line-height: 1.5em;
-  font-weight: 300;
-}
-.nav-expand-content {
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  transform: translateX(100%); 
-  transition: 0.3s;
-  visibility: hidden;
-}
-.nav-expand-content .nav-back-link {
-  display: flex;
-  background-color: #661400 !important;
-}
-.nav-expand-content .nav-back-link::before {
-  content: "chevron_left";
-  font-family: "Material Icons";
-}
-.nav-expand-link {
-  display: flex;
-  justify-content: space-between;
-}
-.nav-expand-link::after {
-  content: "chevron_right";
-
-  font-family: "Material Icons";
-}
-.nav-expand.active > .nav-expand-content {
-  transform: translateX(0);
-  visibility: visible;
-}
-.nav-expand .nav-expand-content {
-  background-color: #000000;
-}
-.nav-expand .nav-expand-content .nav-link {
-  background-color: #A7A7A7;
-}
-.nav-expand .nav-expand-content .nav-expand-content {
-  background-color: #000000;
-}
-.nav-expand .nav-expand-content .nav-expand-content .nav-link {
-  background-color: #A7A7A7;
-}
-.nav-expand .nav-expand-content .nav-expand-content .nav-expand-content .nav-link {
-  background-color: #FF0000;
-}
-.nav-expand .nav-expand-content .nav-expand-content .nav-expand-content .nav-expand-content {
-}
-.nav-expand .nav-expand-content .nav-expand-content .nav-expand-content .nav-expand-content .nav-link {
-}
-  text-decoration: none;
-  </style>
-<font color="#FFFFFF">
-<marquee>Welcome to the Ch3at Book</marquee></font>  
-<nav class="nav-drill">
-<body style="background-color:#000000;">
-   
-
-
-<!--START PS1 CATALOG-->    
-	<ul class="nav-items nav-level-1">
-		<li class="nav-item nav-expand">
-			<a class="nav-link nav-expand-link" href="#">
-<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/logo.png" height=64 width=64>
-			</a>
-			<ul class="nav-items nav-expand-content">
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/logo.png" height=64 width=64>
-					</a>
-				</li>
-				
-				<li class="nav-item nav-expand">
-					<a class="nav-link nav-expand-link" href="#">
-						007 Racing
-					</a>
-					<ul class="nav-items nav-expand-content">
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/covers/007racing.jpg" height=128 width=128>	
-								
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-Unlock All Codes <br><p style="color:RED">Mission Mode Name:</p> <p style="color:yellow">MMMQRRQ</p>
-                            </a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-Tall pedestrians <br><p style="color:RED">Mission Mode Name:</p> <p style="color:yellow">LEMKE</p>
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-Aston Martin Vantage in multi-player mode <br><p style="color:RED">At the title screen</p>
-<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32>
-<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32>
-<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32>
-<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32>
-<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/X.png" height=32 width=32>
-							</a>
-						</li>						
-						</ul>
-						
-						
-					<li class="nav-item nav-expand">
-					<a class="nav-link nav-expand-link" href="#">
-						007: Tomorrow Never Dies
-					</a>
-					<ul class="nav-items nav-expand-content">
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/covers/007tomorrow.jpg" height=128 width=128>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Live Forever<br>
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Level Skip<br>
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Unknown<br>
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32>
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32>	
-							<br>Or<br>
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32> 
-							
-					 	</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Activate Debug Info<br>
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L2.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R2.png" height=32 width=32>
-							</a>
-						</li>
-						
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Deactivate Debug Info<br>
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R2.png" height=32 width=32>
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L2.png" height=32 width=32> 
-							</a>
-						</li>
-						
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								View Boundaries<br>
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 	
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32> 	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-							Remove On-screen Displays<br>
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 	
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/left.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/right.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-							Remove Fire<br>
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 	
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32> 
-							
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Remove All Surface Textures<br>
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 	
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Remove All Objects<br>
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 	
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32> 
-								
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Complete Current Mission<br>
-                                <img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 	
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32>
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Exit Door Any Time<br>
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-									<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32> 
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Freeze All Objects<br>
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 	
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Run Faster<br>
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 	
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32> 	
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Cheat Camera<br>
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 	
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R2.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R2.png" height=32 width=32> 		
-								<br>
-								<p style="color:yellow"> <img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32> to move forward</p>
-								<p style="color:yellow"><img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> to move backward</p>
-								<p style="color:yellow"><img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L2.png" height=32 width=32> to move left</p>
-								<p style="color:yellow"><img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R2.png" height=32 width=32> to move right</p>
-								<p style="color:yellow"><img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> to move up</p>
-								<p style="color:yellow"><img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/X.png" height=32 width=32> to move down</p>
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Ethereal Mode<br>
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 	
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 	
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 	
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 		
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Minimum Health<br>
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/down.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/down.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/up.png" height=32 width=32> 
-						
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Maximum Health<br>
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 			
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/up.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/up.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/down.png" height=32 width=32>
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								All Weapons + 50 Med Kits<br>
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32>
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Invincibility<br>
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Unlock all FMV sequences<br>
-								<p style="color:RED">At the main menu</p>
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 
-					    <img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 	
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Unlock All Missions<br>
-                        <p style="color:RED">At the main menu</p>
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 		
-							<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 	
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 	
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Walk Through Walls<br>
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> 
-							</a>
-						</li>
-						
-						<!--LONG LIST NEEDED EMPTY FRAME-->	
-							<li class="nav-item">
-							<a class="nav-link" href="#">
-							<br>
-							</a>
-						</li>
-						</ul>
-					
-					<li class="nav-item nav-expand">
-					<a class="nav-link nav-expand-link" href="#">
-						1 on 1
-					</a>
-					<ul class="nav-items nav-expand-content">
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/covers/1on1.jpg" height=128 width=128>
-							</a>
-						</li>
-
-
-                            <li class="nav-item">
-							<a class="nav-link" href="#">
-							<p style="color:red">Gameshark Codes</p>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-P1 Scores Easily<br><p style="color:yellow">8019BBA4 000A</p> 
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-							P2 Scores 0<br><p style="color:yellow">8019BBA2 0000</p> 
-
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-							Timer Stops at 60.0<br><p style="color:yellow">8019BB90 0E11</p> 
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-							Unlock All Hidden Players<br><p style="color:yellow">8019BC68 0007</p> 
-							</a>
-						</li>
-						
-												<li class="nav-item">
-							<a class="nav-link" href="#">
-Unlock All Pictures in Omake Mode<br><p style="color:yellow">8019BC6A 07FF</p>
-							</a>
-						</li>
-					</ul>
-					
-					
-					<li class="nav-item nav-expand">
-					<a class="nav-link nav-expand-link" href="#">
-						102 Dalmatians: Puppies to the Rescue
-					</a>
-					<ul class="nav-items nav-expand-content">
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/covers/102dal.jpg" height=128 width=128>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Level 2 Password<br>
-							<p style="color:yellow">Dice, Bone, Bone, Dice</p>	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Level 3 Password<br>
-							<p style="color:yellow">Dice, Key, Bone, Machine</p>	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Level 4 Password<br>
-							<p style="color:yellow">Dice, Bone, Bowl, Toy</p>	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Level 5 Password<br>
-							<p style="color:yellow">Bone, Dice, Dog, Bone</p>	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Level 6 Password<br>
-							<p style="color:yellow">Bone, Dice, Machine, Bowl</p>	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Level 7 Password<br>
-							<p style="color:yellow">Bone, Bone, Paw, Dog</p>	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Cafeteria Level<br>
-							<p style="color:yellow">Domino, Bone, Key, Paw</p>	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Final Level - Cruella<br>
-							<p style="color:yellow">Toy, Bone, Bone, Bone</p>	
-							</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Unlimited Lives<br>
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> 	 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 	 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R2.png" height=32 width=32> 	 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32> 	 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> 	 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R2.png" height=32 width=32> 
-			            <img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L2.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32> 
-						<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> 
-						</a>
-						</li>
-
-
-                            <li class="nav-item">
-							<a class="nav-link" href="#">
-							<p style="color:red">Gameshark Codes</p>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-                        Infinite Lives<br><p style="color:yellow">8001DB40 2400 </p> 
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-							Infinite Health<br><p style="color:yellow">8001DF94 2400</p> 
-
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-							All Puppies Found<br><p style="color:yellow">8007E1AC 0006 </p> 
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-							All Bones Found<br><p style="color:yellow">8007E23C 0064</p> 
-							</a>
-						</li>
-						
-												<li class="nav-item">
-							<a class="nav-link" href="#">
-Unlock All Levels & Mini-Games<br><p style="color:yellow">8007E5F8 001F</p>
-							</a>
-						</li>
-					</ul>
-					
-
-					<li class="nav-item nav-expand">
-					<a class="nav-link nav-expand-link" href="#">
-						3D Baseball
-					</a>
-					<ul class="nav-items nav-expand-content">
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/covers/3dbaseball.jpg" height=128 width=128>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-							<p style="color:red">Gameshark Codes</p>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-                        Infinite Strikes  <br>
-                        <p style="color:yellow">300B5924 0000 </p> 
-						</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-                        1 Strike And You Are Out <br>
-                        <p style="color:yellow">D00B5924 0000<br>
-                        300B5924 0002</p> 
-						</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-                        2 Strikes And You Are Out  <br>
-                        <p style="color:yellow">D00B5924 0000<br>
-                        300B5924 0001 </p> 
-						</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-                        Infinite Balls  <br>
-                        <p style="color:yellow">300B5923 0000 </p> 
-						</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-                        1 Ball And You Walk   <br>
-                        <p style="color:yellow">D00B5922 0000<br>
-                        300B5923 0003 </p> 
-						</a>
-						</li>
-						
-						
-                        <li class="nav-item">
-							<a class="nav-link" href="#">
-                        2 Balls And You Walk    <br>
-                        <p style="color:yellow">D00B5922 0000<br>
-                        300B5923 0002  </p> 
-						</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-                        3 Balls And You Walk    <br>
-                        <p style="color:yellow">D00B5922 0000<br>
-                        300B5923 0001  </p> 
-						</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-                        Infinite Outs   <br>
-                        <p style="color:yellow">300B5925 0000</p> 
-						</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-                        1 Out And You Are Out   <br>
-                        <p style="color:yellow">D00B5924 0000<br>
-                        300B5925 0002   </p> 
-						</a>
-						</li>
-						
-						
-                        <li class="nav-item">
-							<a class="nav-link" href="#">
-                        2 Outs And You Are Out   <br>
-                        <p style="color:yellow">D00B5924 0000<br>
-                        300B5925 0001   </p> 
-						</a>
-						</li>
-
-					</ul>
-					
-<li class="nav-item nav-expand">
-					<a class="nav-link nav-expand-link" href="#">
-						Playstation Game
-					</a>
-					<ul class="nav-items nav-expand-content">
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Playstation Game Cheats
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Playstation Game Cheat 1
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Playstation Game Cheat 2
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Playstation Game Cheat 3
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Playstation Game Cheat 4
-							</a>
-						</li>
-					</ul>					
-					
-					
-					
-					
-					
-<!--END PS1 CATALOG-->	
-
-<!--START PS2 CATALOG-->
-				</li>
-			</ul>
-			<ul class="nav-items nav-level-1">
-				<li class="nav-item nav-expand">
-					<a class="nav-link nav-expand-link" href="#">
-<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps2/logo.png" height=32 width=128>
-					</a>
-					<ul class="nav-items nav-expand-content">
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps2/logo.png" height=32 width=128>
-							</a>
-						</li>
-						<li class="nav-item nav-expand">
-							<a class="nav-link nav-expand-link" href="#">
-								Playstation 2 Game 1
-							</a>
-							<ul class="nav-items nav-expand-content">
-								<li class="nav-item">
-									<a class="nav-link" href="#">
-										Playstation 2 Game 1 Cheats
-									</a>
-								</li>
-
-								<li class="nav-item">
-									<a class="nav-link" href="#">
-										Playstation 2 Game 1 Cheat 1
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">
-										Playstation 2 Game 1 Cheat 2
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">
-										Playstation 2 Game 1 Cheat 3
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">
-										Playstation 2 Game 1 Cheat 4
-									</a>
-								</li>
-							</ul>
-<!--END PS2 CATALOG-->
+<!-- Rest of your HTML code -->
 
 
 
-							
-							
+
+<!-- HTML Starts -->
+<body>
+<div class="wrapper">
+  <nav>
+    <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox" checked>
+    <div class="m-menu">
+      <div class="m-menu__header">
+        <span><font color="#C1C7D0">
+<marquee>Welcome to the Ch3at Book</marquee></font> </span>
+      </div>
+     <!--catalog starts here -->
+      
+      <!-- Playstation 1 -->
+      <ul>
+        <li>
+        <!-- System Icon --> 
+          <label class="a-label__chevron" for="ps1"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/logo.png" height=64 width=64></label>
+          <input type="checkbox" id="ps1" name="ps1" class="m-menu__checkbox">          
+<div class="m-menu">
+            <div class="m-menu__header">
+            <label class="m-menu__toggle" for="ps1">
+    <!-- Start Header -->        
+  	<!-- Back Icon -->
+<svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg></label>
+<!-- System Icon -->  
+<span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/logo.png" height=48 width=48></span>
+            </div>
+<!--End Header-->
+
+ <!--Games List-->
+            <ul>
+			<label class="a-label__chevron" for="ps1-g1">PS1 Game 1</label>
+<!--End Games List-->
+            
+            
+<!--Ps1 Game 1 Cheats Menu-->
+            <input type="checkbox" id="ps1-g1" name="ps1" class="m-menu__checkbox">
+<div class="m-menu">
+   <div class="m-menu__header">
+   <label class="m-menu__toggle" for="ps1-g1">
+   <!-- Start Header --> 
+          <!--Back Icon-->
+          <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+        </label> 
+        <!--System Icon--> 
+<span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/logo.png" height=48 width=48></span>
+      </div>
+<!--End Header-->
+<!--Ps1 Game 1 Cheats Start-->
+      <ul>
+        <li><label>PS1 G1 Cheat 1</label></li>
+      </ul>
+    </div>
+  </li>
+</ul>
+</div>
+</li>
+<!-- End Ps1 Game 1 Cheats-->
+
+<!--End Playstation 1-->
+
+
+<!-- Playstation 2 -->
+
+        <li>
+        <!-- System Icon --> 
+          <label class="a-label__chevron" for="ps2"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps2/logo.png" height=32 width=128></label>
+          <input type="checkbox" id="ps2" name="ps2" class="m-menu__checkbox">          
+<div class="m-menu">
+            <div class="m-menu__header">
+            <label class="m-menu__toggle" for="ps2">
+    <!-- Start Header -->        
+  	<!-- Back Icon -->
+<svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg></label>
+<!-- System Icon -->  
+<span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps2/logo.png" height=32 width=128></span>
+            </div>
+<!--End Header-->
+
+ <!--Games List-->
+            <ul>
+			<label class="a-label__chevron" for="ps2-g1">ps2 Game 1</label>
+<!--End Games List-->
+            
+            
+<!--ps2 Game 1 Cheats Menu-->
+            <input type="checkbox" id="ps2-g1" name="ps2" class="m-menu__checkbox">
+<div class="m-menu">
+   <div class="m-menu__header">
+   <label class="m-menu__toggle" for="ps2-g1">
+   <!-- Start Header --> 
+          <!--Back Icon-->
+          <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+        </label> 
+        <!--System Icon--> 
+<span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps2/logo.png" height=32 width=128></span>
+      </div>
+<!--End Header-->
+<!--ps2 Game 1 Cheats Start-->
+      <ul>
+        <li><label>(PX)(PO)(T)(SQ)(UP)(DOWN)(LEFT)(RIGHT)(PSTART)(PSELECT)(PL1)(PL2)(PL3)(PR1)(PR2)(PR3) </label></li>
+      </ul>
+    </div>
+  </li>
+</ul>
+</div>
+</li>
+<!-- End ps2 Game 1 Cheats-->
+
+<!--End Playstation 2-->
+
+
+<!--end of page-->
+</li>
+</ul>
+</div>
 </nav>
-<script src="https://hv-leaf.github.io/Ch3at/backend.js"></script>
+</div>
+</body>
+<!--PS X Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(PX\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/X.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
 
+<!--PS O Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(PO\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
 
-  </body>
+<!--PS Triangle Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(T\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
 
+<!--PS Square Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper"); // Assuming the text will be inside the .wrapper element
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(SQ\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS UP Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(UP\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/up.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS Down Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(DOWN\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/down.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS Left Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(LEFT\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/left.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS Right Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(RIGHT\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/right.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS Start Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(PSTART\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS Select Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(PSELECT\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS L1 Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(PL1\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS L2 Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(PL2\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L2.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS L3 Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(PL3\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L3.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS R1 Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(PR1\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS R2 Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(PR2\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R2.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
+
+<!--PS R3 Button-->
+<script> 
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDiv = document.querySelector(".wrapper");
+    if (contentDiv) {
+      const contentHTML = contentDiv.innerHTML;
+      const replacedHTML = contentHTML.replace(/\(PR3\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/r3.png" height=32 width=32>');
+      contentDiv.innerHTML = replacedHTML;
+    }
+  });
+</script>
 
 </html>
