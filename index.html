@@ -128,6 +128,30 @@
   }
 }
 
+.masked-text {
+      position: relative;
+      font-size: 28px;
+      font-weight: bold;
+      background-image: url("https://hv-leaf.github.io/Ch3at/ch3ticons/backend/code.gif");
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 4px;
+      background-size: 128px auto;
+      background-repeat: repeat;
+      animation: scrollText 15s linear infinite;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Initial shadow position and color */
+    }
+
+    @keyframes scrollText {
+      0% {
+        background-position: 0 100%;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+
 </style>
 </head>
 
@@ -139,7 +163,10 @@
       <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox" checked>
       <div class="m-menu">
         <div class="m-menu__header">
-          <span><font color="#C1C7D0"><marquee><p class="rainbow-text">Welcome to the Ch3at Book</p></marquee></font></span>
+          <span><font color="#C1C7D0"><marquee>
+          
+         
+          <div class="masked-text">Welcome to the Ch3at Book</div></marquee></font></span>
         </div>
         <!-- Catalog starts here -->
 
@@ -872,4 +899,29 @@
     }
   });
 </script>
+  
+  <script>
+    // JavaScript to update the drop shadow position only when the mouse is over the text
+    const maskedText = document.getElementById('maskedText');
+
+    maskedText.addEventListener('mousemove', updateShadow);
+
+    function updateShadow(e) {
+      const rect = maskedText.getBoundingClientRect();
+      const offsetX = (e.clientX - rect.left - rect.width / 2) / 10; // Adjust the divisor to control horizontal shadow movement
+      const offsetY = (e.clientY - rect.top - rect.height / 2) / 10; // Adjust the divisor to control vertical shadow movement
+
+      if (
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom
+      ) {
+        // Dark Green Color (adjust the alpha value as desired for transparency)
+        maskedText.style.textShadow = `${offsetX}px ${offsetY}px 4px rgba(0, 128, 0, 0.6)`;
+      } else {
+        maskedText.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.3)'; // Reset to initial shadow position and color
+      }
+    }
+  </script>
 </html>
