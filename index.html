@@ -138,6 +138,16 @@
             padding: 5px; /* Optional: Add padding for better spacing */
         }
 </style>
+
+<style>
+    .psbutton {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background-image: url('https://hv-leaf.github.io/Ch3at/ch3ticons/backend/PSButtons.png');
+      background-size: 480px 32px;
+    }
+  </style>
 </head>
 
 <!-- HTML Starts -->
@@ -1493,168 +1503,49 @@ End PS2 Game Name Here -->
 </ul></div></li></ul>
 <!-- End Playstation 2 -->
 </div></nav></div>
+<script>
+    const psbuttonMapping = {
+      'up': { start: 0, end: 30 },
+      'down': { start: 30, end: 60 },
+      'left': { start: 60, end: 90 },
+      'right': { start: 90, end: 120 },
+      'px': { start: 120, end: 150 },
+      'po': { start: 150, end: 180 },
+      'sq': { start: 180, end: 210 },
+      't': { start: 210, end: 240 },
+      'pselect': { start: 240, end: 270 },
+      'pstart': { start: 270, end: 297 },
+      'pr1': { start: 297, end: 330 },
+      'pr2': { start: 330, end: 360 },
+      'pl1': { start: 360, end: 390 },
+      'pl2': { start: 390, end: 420 },
+      'pr3': { start: 420, end: 450 },
+      'pl3': { start: 450, end: 480 },
+    };
+
+    function replaceTextWithPSButtons() {
+      const paragraphs = document.getElementsByTagName('p');
+
+      Array.from(paragraphs).forEach(paragraph => {
+        const text = paragraph.innerText;
+        const regex = /\((up|down|left|right|PX|PO|SQ|T|PSELECT|PSTART|PR1|PR2|PL1|PL2|PR3|PL3)\)/ig;
+
+        paragraph.innerHTML = text.replace(regex, (match, psbuttonName) => {
+          const psbuttonData = psbuttonMapping[psbuttonName.toLowerCase()];
+          if (psbuttonData !== undefined) {
+            const psbuttonElement = document.createElement('div');
+            psbuttonElement.classList.add('psbutton');
+            psbuttonElement.style.backgroundPosition = `-${psbuttonData.start}px 0`;
+            psbuttonElement.style.width = `${psbuttonData.end - psbuttonData.start}px`; // Set the width to show only the psbutton
+            return psbuttonElement.outerHTML;
+          }
+          return match; // If no mapping found, keep the original text
+        });
+      });
+    }
+
+    replaceTextWithPSButtons();
+  </script>
 </body>
-<script> 
-<!--PS X Button-->
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(PX\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/X.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
 
-<!--PS O Button-->
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(PO\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/O.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS Triangle Button-->
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(T\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/triangle.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS Square Button-->
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper"); // Assuming the text will be inside the .wrapper element
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(SQ\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/square.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS UP Button-->
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(UP\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/up.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS Down Button--> 
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(DOWN\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/down.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS Left Button--> 
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(LEFT\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/left.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS Right Button--> 
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(RIGHT\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/right.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-
-<!--PS Start Button-->
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(PSTART\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/start.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS Select Button--> 
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(PSELECT\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/select.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS L1 Button--> 
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(PL1\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L1.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS L2 Button-->
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(PL2\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L2.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS L3 Button--> 
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(L3\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/L3.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS R1 Button-->
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(PR1\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R1.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS R2 Button--> 
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(PR2\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/R2.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-
-<!--PS R3 Button-->
-  document.addEventListener("DOMContentLoaded", function () {
-    const contentDiv = document.querySelector(".wrapper");
-    if (contentDiv) {
-      const contentHTML = contentDiv.innerHTML;
-      const replacedHTML = contentHTML.replace(/\(R3\)/g, '<img class="fit-picture" src="https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/r3.png" height=32 width=32> ');
-      contentDiv.innerHTML = replacedHTML;
-    }
-  });
-  
-</script>
 </html>
