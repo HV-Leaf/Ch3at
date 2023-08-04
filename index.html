@@ -1530,17 +1530,17 @@ End PS2 Game Name Here -->
         const text = paragraph.innerText;
         const regex = /\((up|down|left|right|PX|PO|SQ|T|PSELECT|PSTART|PR1|PR2|PL1|PL2|PR3|PL3)\)/ig;
 
-        paragraph.innerHTML = text.replace(regex, (match, psbuttonName) => {
-          const psbuttonData = psbuttonMapping[psbuttonName.toLowerCase()];
-          if (psbuttonData !== undefined) {
-            const psbuttonElement = document.createElement('div');
-            psbuttonElement.classList.add('psbutton');
-            psbuttonElement.style.backgroundPosition = `-${psbuttonData.start}px 0`;
-            psbuttonElement.style.width = `${psbuttonData.end - psbuttonData.start}px`; // Set the width to show only the psbutton
-            return psbuttonElement.outerHTML;
-          }
-          return match; // If no mapping found, keep the original text
-        });
+paragraph.innerHTML = text.replace(regex, (match, psbuttonName) => {
+  const psbuttonData = psbuttonMapping[psbuttonName.toLowerCase()];
+  if (psbuttonData !== undefined) {
+    const psbuttonElement = document.createElement('div');
+    psbuttonElement.classList.add('psbutton');
+    psbuttonElement.style.backgroundPosition = `-${psbuttonData.start}px 0`;
+    psbuttonElement.style.width = `${psbuttonData.end - psbuttonData.start}px`; // Set the width to show only the psbutton
+    return psbuttonElement.outerHTML + ' '; // Add a space after each button
+  }
+  return match; // If no mapping found, keep the original text
+});
       });
     }
 
