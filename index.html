@@ -11,6 +11,10 @@
     margin: 0;
   }
   body {
+     user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
     background-color: #333;
     padding: 0;
     margin: 0;
@@ -1545,7 +1549,25 @@ paragraph.innerHTML = text.replace(regex, (match, psbuttonName) => {
     }
 
     replaceTextWithPSButtons();
-  </script>
+</script>
+<script>
+  document.addEventListener('copy', function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener('cut', function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener('paste', function (e) {
+  e.preventDefault();
+});
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+</script>
+
+
 </body>
 
 </html>
