@@ -2,25 +2,14 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">	
+
 <style>
   * {
     padding: 0;
     margin: 0;
   }
 
- img {
-  pointer-events: none;
-}
- 
   body {
-     user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-    background-color: #333;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
@@ -31,10 +20,8 @@
     height: 100vh; /* Adjusted height to fill the screen */
     margin: 0 auto;
     overflow: hidden;
-    background-color: #333;
     position: relative;
   }
-  
   nav .m-menu__checkbox {
     display: none;
   }
@@ -51,13 +38,10 @@
     transition: transform 0.35s;
     z-index: 1;
     overflow: hidden;
-    background-color: #99AAB5;
+    background-color: #99AAB5; /*header color*/
   }
   nav .m-menu__header {
-    padding: 0 16px;
-    height: 70px;
     display: flex;
-    justify-content: space-around;
     align-items: center;
   }
   nav .m-menu__header span {
@@ -65,7 +49,6 @@
     font-weight: bold;
     text-align: center;
     width: 100%;
-    background-color: #99AAB5;
   }
   nav .m-menu .m-menu {
     transform: translate3d(100%, 0, 0);
@@ -73,46 +56,24 @@
   nav .m-menu ul {
     height: 100%;
     overflow-y: auto;
-    background-color: #B9BBBE;
+    background-color: #B9BBBE; /*body color*/
   }
   nav .m-menu ul li a, nav .m-menu ul li label {
     display: block;
     text-align: left;
-    padding: 0 15px;
+    padding: 5px 5px;
     line-height: 47px;
     text-decoration: none;
-    /* Removed the color property */
     cursor: pointer;
     font-size: 1rem;
     position: relative;
   }
- nav .m-menu ul li label.a-label__chevron::after {
-    content: "";
-    position: absolute;
-    display: inline-block;
-    height: 10px;
-    width: 10px;
-    border-color: #333;
-    border-style: solid;
-    border-width: 1px 1px 0 0;
-    transform: rotate(45deg);
-    top: 50%;
-    margin-top: -5px;
-    right: 16px;
-  }
-  nav .m-menu ul li .-invisible {
-    border-bottom: 0;
-  }
-  nav .m-menu .m-menu label.m-menu__toggle {
-    display: flex;
-    border-bottom: 0;
-    padding: 0;
-    box-sizing: content-box;
-  } 
-  nav .m-menu__checkbox:checked ~ .m-menu {
+nav .m-menu__checkbox:checked ~ .m-menu {
     transform: translate3d(0, 0, 0);
   }
-  
+</style>
+
+<style>  
 .greencode {
       position: relative;
       font-size: 13px;
@@ -219,7 +180,7 @@
 <div class="m-menu">
 <div class="m-menu__header">
 <span><font color="#C1C7D0">
-<p class="greencode">Welcome to the Ch3at Book</p></font></span></div><ul>
+<p class="greencode" style="font-size: 20px;">Welcome to the Ch3at Book</p></font></span></div><ul>
         <!-- Catalog starts here -->   
           
 <!-- Playstation System -->
