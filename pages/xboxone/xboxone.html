@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .wrapper {
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    nav .m-menu__checkbox {
+        display: none;
+    }
+
+    nav label.m-menu__toggle {
+        cursor: pointer;
+    }
+
+    nav .m-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.35s;
+        z-index: 1;
+        overflow: hidden;
+        background-color: #99AAB5; /* day header color */
+    }
+
+    nav .m-menu__header {
+        display: flex;
+        align-items: center;
+    }
+
+    nav .m-menu__header span {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav .m-menu .m-menu {
+        transform: translate3d(100%, 0, 0);
+    }
+
+    nav .m-menu ul {
+        height: 100%;
+        overflow-y: auto;
+        background-color: #B9BBBE; /* day body */
+    }
+
+    nav .m-menu ul li a,
+    nav .m-menu ul li label {
+        display: block;
+        text-align: left;
+        padding: 5px 5px;
+        line-height: 47px;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1rem;
+        position: relative;
+        color: #000; /* text color for day mode */
+    }
+
+    nav .m-menu__checkbox:checked ~ .m-menu {
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* On dark mode toggle */
+    .dark-mode {
+    }
+
+    .dark-mode nav .m-menu {
+        background-color: #1E1E1E; /* Dark header color */
+    }
+
+    .dark-mode nav .m-menu ul {
+        background-color: #272727; /* Dark body color */
+    }
+
+    .dark-mode nav .m-menu ul li a,
+    .dark-mode nav .m-menu ul li label {
+        color: #FFFFFF; /* White text color for night mode */
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* White glow effect */
+    }
+
+    /* Additional styling for the combined button */
+    #combinedButton {
+        background-color: transparent;
+        border: none;
+        padding: 5px; /* Added padding to make the button clickable */
+        font-size: 20px; /* Adjust the font size to make the emoji visible */
+        margin: 0;
+        cursor: pointer;
+        outline: none;
+    }
+</style>
+  
+  <style>
+    .alphabet {
+      display: inline-block;
+      height: 64px;
+      background-image: url('https://hv-leaf.github.io/Ch3at/ch3ticons/backend/ALPHABET.png');   
+  </style>
+  
+</head>
+
+<!-- HTML Starts -->
+<body>
+  <div class="wrapper">
+    <!-- Start Header -->
+    <nav>
+      <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox" checked>
+<div class="m-menu">
+<div class="m-menu__header">
+<a href="https://hv-leaf.github.io/Ch3at/pages/microsoft.html" rel="noopener noreferrer">
+  <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
+    <path d="M19 12H6M12 5l-7 7 7 7"/>
+  </svg>
+</a>
+
+<span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128></span><button id="combinedButton">🌙</button> </div><ul>
+        <!-- Catalog starts here -->   
+<!-- xboxone # -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/09.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(#)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone #-->
+
+
+<!-- xboxone a -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/a.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(a)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone a-->
+
+<!-- xboxone b -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/b.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(b)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone b-->
+
+<!-- xboxone c -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/c.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(c)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone c-->
+
+<!-- xboxone d -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/d.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(d)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone d-->
+<!-- xboxone e -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/e.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(e)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone e-->
+
+<!-- xboxone f -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/f.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(f)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone f-->
+
+<!-- xboxone g -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/g.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(g)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone g-->
+
+<!-- xboxone h -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/h.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(h)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone h-->
+
+<!-- xboxone i -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/i.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(i)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone i-->
+
+<!-- xboxone j -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/j.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(j)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone j-->
+
+<!-- xboxone k -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/k.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(k)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone k-->
+
+<!-- xboxone l -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/l.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(l)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone l-->
+
+<!-- xboxone m -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/m.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(m)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone m-->
+
+<!-- xboxone n -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/n.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(n)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone n-->
+
+<!-- xboxone o -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/o.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(o)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone o-->
+
+<!-- xboxone p -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/p.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(p)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone p-->
+
+<!-- xboxone q -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/q.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(q)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone q-->
+
+<!-- xboxone r -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/r.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(r)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone r-->
+
+<!-- xboxone s -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/s.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(s)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone s-->
+
+<!-- xboxone t -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/t.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(t)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone t-->
+
+<!-- xboxone u -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/u.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(u)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone u-->
+
+<!-- xboxone v -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/v.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(v)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone v-->
+
+<!-- xboxone w -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/w.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(w)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone w-->
+
+<!-- xboxone x -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/x.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(x)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone x-->
+
+<!-- xboxone y -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/y.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(y)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone y-->
+
+<!-- xboxone z -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/xboxone/z.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xboxone/logo.png" height=32 width=128> <alph>(z)</alph>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End xboxone z-->  
+ <br></br><br></br></ul>
+  </div>
+</li>
+
+<script>
+  document.addEventListener('copy', function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener('cut', function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener('paste', function (e) {
+  e.preventDefault();
+});
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+</script>
+
+<script>
+    const alphabetArtMapping = {
+      '#': { start: 0, end: 64 },
+      'a': { start: 64, end: 128 },
+      'b': { start: 128, end: 192 },
+      'c': { start: 192, end: 256 },
+      'd': { start: 256, end: 320 },
+      'e': { start: 320, end: 384 },
+      'f': { start: 384, end: 448 },
+      'g': { start: 448, end: 512 },
+      'h': { start: 512, end: 576 },
+      'i': { start: 576, end: 640 },
+      'j': { start: 640, end: 704 },
+      'k': { start: 704, end: 768 },
+      'l': { start: 768, end: 832 },
+      'm': { start: 832, end: 896 },
+      'n': { start: 896, end: 960 },
+      'o': { start: 960, end: 1024 },
+      'p': { start: 1024, end: 1088 },
+      'q': { start: 1088, end: 1152 },
+      'r': { start: 1152, end: 1216 },
+      's': { start: 1216, end: 1280 },
+      't': { start: 1280, end: 1344 },
+      'u': { start: 1344, end: 1408 },
+      'v': { start: 1408, end: 1472 },
+      'w': { start: 1472, end: 1536 },
+      'x': { start: 1536, end: 1600 },
+      'y': { start: 1600, end: 1664 },
+      'z': { start: 1664, end: 1728 },
+      
+    };
+
+    function replaceTextWithalphabetArt() {
+      const paragraphs = document.getElementsByTagName('alph');
+
+      Array.from(paragraphs).forEach(paragraph => {
+        const text = paragraph.innerText;
+        const regex = /\((#|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z)\)/ig;
+
+        paragraph.innerHTML = text.replace(regex, (match, alphimg) => {
+          const alphabetData = alphabetArtMapping[alphimg.toLowerCase()];
+          if (alphabetData !== undefined) {
+            const alphabetElement = document.createElement('div');
+            alphabetElement.classList.add('alphabet');
+            alphabetElement.style.backgroundPosition = `-${alphabetData.start}px 0`;
+            alphabetElement.style.width = `${alphabetData.end - alphabetData.start}px`;
+            return alphabetElement.outerHTML + ' ';
+          }
+          return match; // If no mapping found, keep the original text
+        });
+      });
+    }
+
+    replaceTextWithalphabetArt();
+  </script>
+  
+  <script>
+    const combinedButton = document.getElementById("combinedButton");
+    const wrapper = document.querySelector(".wrapper");
+    let isDarkMode = false;
+
+    // Check if a "darkMode" cookie exists and set the initial mode accordingly
+    const darkModeCookie = getCookie("darkMode");
+    if (darkModeCookie) {
+      isDarkMode = darkModeCookie === "true";
+      wrapper.classList.toggle("dark-mode", isDarkMode);
+      combinedButton.innerHTML = isDarkMode ? "☀️" : "🌙";
+    }
+
+    combinedButton.addEventListener("click", () => {
+      isDarkMode = !isDarkMode;
+      wrapper.classList.toggle("dark-mode", isDarkMode);
+      combinedButton.innerHTML = isDarkMode ? "☀️" : "🌙";
+
+      // Set a "darkMode" cookie to remember the user's preference
+      setCookie("darkMode", isDarkMode);
+
+      // Save the state of the button to localStorage
+      localStorage.setItem("buttonState", isDarkMode ? "night" : "day");
+    });
+
+    // Function to get a cookie's value
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    // Function to set a cookie
+    function setCookie(name, value) {
+      document.cookie = `${name}=${value}; path=/`;
+    }
+    
+    // Check localStorage for button state on page load
+    const savedButtonState = localStorage.getItem("buttonState");
+    if (savedButtonState) {
+      isDarkMode = savedButtonState === "night";
+      wrapper.classList.toggle("dark-mode", isDarkMode);
+      combinedButton.innerHTML = isDarkMode ? "☀️" : "🌙";
+    }
+  </script>
+</body>
+</html>
