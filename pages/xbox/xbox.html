@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .wrapper {
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    nav .m-menu__checkbox {
+        display: none;
+    }
+
+    nav label.m-menu__toggle {
+        cursor: pointer;
+    }
+
+    nav .m-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.35s;
+        z-index: 1;
+        overflow: hidden;
+        background-color: #99AAB5; /* day header color */
+    }
+
+    nav .m-menu__header {
+        display: flex;
+        align-items: center;
+    }
+
+    nav .m-menu__header span {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav .m-menu .m-menu {
+        transform: translate3d(100%, 0, 0);
+    }
+
+    nav .m-menu ul {
+        height: 100%;
+        overflow-y: auto;
+        background-color: #B9BBBE; /* day body */
+    }
+
+    nav .m-menu ul li a,
+    nav .m-menu ul li label {
+        display: block;
+        text-align: left;
+        padding: 5px 5px;
+        line-height: 47px;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1rem;
+        position: relative;
+        color: #000; /* text color for day mode */
+    }
+
+    nav .m-menu__checkbox:checked ~ .m-menu {
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* On dark mode toggle */
+    .dark-mode {
+    }
+
+    .dark-mode nav .m-menu {
+        background-color: #1E1E1E; /* Dark header color */
+    }
+
+    .dark-mode nav .m-menu ul {
+        background-color: #272727; /* Dark body color */
+    }
+
+    .dark-mode nav .m-menu ul li a,
+    .dark-mode nav .m-menu ul li label {
+        color: #FFFFFF; /* White text color for night mode */
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* White glow effect */
+    }
+
+    /* Additional styling for the combined button */
+    #combinedButton {
+        background-color: transparent;
+        border: none;
+        padding: 5px; /* Added padding to make the button clickable */
+        font-size: 20px; /* Adjust the font size to make the emoji visible */
+        margin: 0;
+        cursor: pointer;
+        outline: none;
+    }
+</style>
+
+
+
+<style>  
+.greencode {
+      position: relative;
+      font-size: 13px;
+      margin: 0;
+      font-weight: bold;
+      background-image: url("https://hv-leaf.github.io/Ch3at/ch3ticons/backend/code.gif");
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 4px;
+      background-size: 128px 128px;
+      background-repeat: repeat;
+      animation: scrollText 2s linear infinite;
+    }
+
+    @keyframes scrollText {
+      0% {
+        background-position: 0 100%;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+    </style>
+    <style>
+    .redcode {
+      position: relative;
+      font-size: 13px;
+      margin: 0;
+      font-weight: bold;
+      background-image: url("https://hv-leaf.github.io/Ch3at/ch3ticons/backend/code2.gif");
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 4px;
+      background-size: 128px 128px;
+      background-repeat: repeat;
+      animation: scrollText 2s linear infinite;
+    }
+
+    @keyframes scrollText {
+      0% {
+        background-position: 0 100%;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+    </style>
+    
+    <style>
+        table {
+            border: none;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: none;
+            padding: 5px;
+        }
+</style>
+
+<style>
+    .psbutton {
+      display: inline-block;
+      height: 32px;
+      background-image: url('https://hv-leaf.github.io/Ch3at/ch3ticons/backend/PSButtons.png');
+      background-size: 480px 32px;
+    }
+  </style>
+  
+  <style>
+    .alphabet {
+      display: inline-block;
+      height: 64px;
+      background-image: url('https://hv-leaf.github.io/Ch3at/ch3ticons/backend/ALPHABET.png');   
+  </style>
+  
+     <style>
+    .ps1covers1 {
+      display: inline-block;
+      height: 128px;
+      background-image: url('https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/covers/ps1sprite1.jpg');
+      
+  </style> 
+
+  <style>
+    .ps1covers2 {
+      display: inline-block;
+      height: 128px;
+      background-image: url('https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/covers/ps1sprite2.jpg');
+      
+  </style>
+
+</head>
+  
+</head>
+
+<!-- HTML Starts -->
+<body>
+  <div class="wrapper">
+    <!-- Start Header -->
+    <nav>
+      <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox" checked>
+<div class="m-menu">
+<div class="m-menu__header">
+<span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128></span><button id="combinedButton">🌙</button> </div><ul>
+        <!-- Catalog starts here -->   
+
+    <!-- xbox # Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-#"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (#) </alph>
+        </label>
+        <input type="checkbox" id="xbox-#" name="xbox-#" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-#">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(#)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with # here-->   
+          </ul></div></li>
+      <!-- End xbox # Section -->
+    
+<!-- xbox A Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-A"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (a) </alph>
+        </label>
+        <input type="checkbox" id="xbox-A" name="xbox-A" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-A">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(a)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with A here-->   
+          </ul></div></li>
+      <!-- End xbox A Section -->    
+
+<!-- xbox B Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-B"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (b) </alph>
+        </label>
+        <input type="checkbox" id="xbox-B" name="xbox-B" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-B">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(b)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with B here-->   
+          </ul></div></li>
+      <!-- End xbox B Section --> 
+      
+      <!-- xbox C Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-C"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (c) </alph>
+        </label>
+        <input type="checkbox" id="xbox-C" name="xbox-C" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-C">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(c)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with C here-->   
+          </ul></div></li>
+      <!-- End xbox C Section -->
+      
+      <!-- xbox D Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-D"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (d) </alph>
+        </label>
+        <input type="checkbox" id="xbox-D" name="xbox-D" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-D">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(d)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with D here-->   
+          </ul></div></li>
+      <!-- End xbox D Section --> 
+      
+      <!-- xbox E Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-E"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (e) </alph>
+        </label>
+        <input type="checkbox" id="xbox-E" name="xbox-E" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-E">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(e)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with E here-->   
+          </ul></div></li>
+      <!-- End xbox E Section --> 
+      
+      <!-- xbox F Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-F"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (f) </alph>
+        </label>
+        <input type="checkbox" id="xbox-F" name="xbox-F" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-F">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(f)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with F here-->   
+          </ul></div></li>
+      <!-- End xbox F Section --> 
+      
+      <!-- xbox G Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-G"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (g) </alph>
+        </label>
+        <input type="checkbox" id="xbox-G" name="xbox-G" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-G">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(g)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with G here-->   
+          </ul></div></li>
+      <!-- End xbox G Section --> 
+      
+      <!-- xbox H Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-H"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (h) </alph>
+        </label>
+        <input type="checkbox" id="xbox-H" name="xbox-H" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-H">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(h)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with H here-->   
+          </ul></div></li>
+      <!-- End xbox H Section --> 
+      
+      <!-- xbox I Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-I"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (i) </alph>
+        </label>
+        <input type="checkbox" id="xbox-I" name="xbox-I" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-I">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(i)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with I here-->   
+          </ul></div></li>
+      <!-- End xbox I Section --> 
+      
+      <!-- xbox J Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-J"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (j) </alph>
+        </label>
+        <input type="checkbox" id="xbox-J" name="xbox-J" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-J">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(j)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with J here-->   
+          </ul></div></li>
+      <!-- End xbox J Section --> 
+      
+      <!-- xbox K Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-K"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (k) </alph>
+        </label>
+        <input type="checkbox" id="xbox-K" name="xbox-K" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-K">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(k)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with K here-->   
+          </ul></div></li>
+      <!-- End xbox K Section --> 
+      
+      <!-- xbox L Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-L"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (l) </alph>
+        </label>
+        <input type="checkbox" id="xbox-L" name="xbox-L" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-L">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(l)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with L here-->   
+          </ul></div></li>
+      <!-- End xbox L Section --> 
+      
+      <!-- xbox M Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-M"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (m) </alph>
+        </label>
+        <input type="checkbox" id="xbox-M" name="xbox-M" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-M">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(m)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with M here-->   
+          </ul></div></li>
+      <!-- End xbox M Section --> 
+      
+      <!-- xbox N Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-N"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (n) </alph>
+        </label>
+        <input type="checkbox" id="xbox-N" name="xbox-N" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-N">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(n)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with N here-->   
+          </ul></div></li>
+      <!-- End xbox N Section --> 
+      
+      <!-- xbox O Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-O"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (o) </alph>
+        </label>
+        <input type="checkbox" id="xbox-O" name="xbox-O" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-O">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(o)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with O here-->   
+          </ul></div></li>
+      <!-- End xbox O Section --> 
+      
+      <!-- xbox P Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-P"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (p) </alph>
+        </label>
+        <input type="checkbox" id="xbox-P" name="xbox-P" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-P">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(p)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with P here-->   
+          </ul></div></li>
+      <!-- End xbox P Section --> 
+      
+      <!-- xbox Q Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-Q"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (q) </alph>
+        </label>
+        <input type="checkbox" id="xbox-Q" name="xbox-Q" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-Q">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(q)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with Q here-->   
+          </ul></div></li>
+      <!-- End xbox Q Section --> 
+      
+      <!-- xbox R Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-R"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (r) </alph>
+        </label>
+        <input type="checkbox" id="xbox-R" name="xbox-R" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-R">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(r)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with R here-->   
+          </ul></div></li>
+      <!-- End xbox R Section --> 
+      
+      <!-- xbox S Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-S"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (s) </alph>
+        </label>
+        <input type="checkbox" id="xbox-S" name="xbox-S" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-S">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(s)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with S here-->   
+          </ul></div></li>
+      <!-- End xbox S Section --> 
+      
+      <!-- xbox T Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-T"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (t) </alph>
+        </label>
+        <input type="checkbox" id="xbox-T" name="xbox-T" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-T">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(t)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with T here-->   
+          </ul></div></li>
+      <!-- End xbox T Section --> 
+      
+      <!-- xbox U Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-U"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (u) </alph>
+        </label>
+        <input type="checkbox" id="xbox-U" name="xbox-U" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-U">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(u)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with U here-->   
+          </ul></div></li>
+      <!-- End xbox U Section --> 
+      
+      <!-- xbox V Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-V"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (v) </alph>
+        </label>
+        <input type="checkbox" id="xbox-V" name="xbox-V" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-V">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(v)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with V here-->   
+          </ul></div></li>
+      <!-- End xbox V Section --> 
+      
+      <!-- xbox W Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-W"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (w) </alph>
+        </label>
+        <input type="checkbox" id="xbox-W" name="xbox-W" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-W">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(w)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with W here-->   
+          </ul></div></li>
+      <!-- End xbox W Section --> 
+      
+      <!-- xbox X Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-X"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (x) </alph>
+        </label>
+        <input type="checkbox" id="xbox-X" name="xbox-X" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-X">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(x)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with X here-->   
+          </ul></div></li>
+      <!-- End xbox X Section --> 
+      
+      <!-- xbox Y Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-Y"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (y) </alph>
+        </label>
+        <input type="checkbox" id="xbox-Y" name="xbox-Y" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-Y">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(y)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with Y here-->   
+          </ul></div></li>
+      <!-- End xbox Y Section --> 
+      
+      <!-- xbox Z Section -->
+      <li>
+        <label class="a-label__chevron" for="xbox-Z"><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph> (z) </alph>
+        </label>
+        <input type="checkbox" id="xbox-Z" name="xbox-Z" class="m-menu__checkbox">
+        <div class="m-menu">
+          <div class="m-menu__header">
+            <label class="m-menu__toggle" for="xbox-Z">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+            </label>
+            <span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/xbox/logo.png" height=32 width=128> <alph>(z)</alph></span>
+          </div>
+          <ul>
+            <!-- Insert Games Starting with Z here-->   
+          </ul></div></li>
+      <!-- End xbox Z Section --> 
+      
+ <br></br><br></br></ul>
+  </div>
+</li>
+
+
+
+<script>
+  document.addEventListener('copy', function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener('cut', function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener('paste', function (e) {
+  e.preventDefault();
+});
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+</script>
+
+<script>
+    const psbuttonMapping = {
+      'up': { start: 0, end: 30 },
+      'down': { start: 30, end: 60 },
+      'left': { start: 60, end: 90 },
+      'right': { start: 90, end: 120 },
+      'px': { start: 120, end: 150 },
+      'po': { start: 150, end: 180 },
+      'sq': { start: 180, end: 210 },
+      't': { start: 210, end: 240 },
+      'pselect': { start: 240, end: 270 },
+      'pstart': { start: 270, end: 297 },
+      'pr1': { start: 297, end: 330 },
+      'pr2': { start: 330, end: 360 },
+      'pl1': { start: 360, end: 390 },
+      'pl2': { start: 390, end: 420 },
+      'pr3': { start: 420, end: 450 },
+      'pl3': { start: 450, end: 480 },
+    };
+
+    function replaceTextWithPSButtons() {
+      const paragraphs = document.getElementsByTagName('p');
+
+      Array.from(paragraphs).forEach(paragraph => {
+        const text = paragraph.innerText;
+        const regex = /\((up|down|left|right|PX|PO|SQ|T|PSELECT|PSTART|PR1|PR2|PL1|PL2|PR3|PL3)\)/ig;
+
+paragraph.innerHTML = text.replace(regex, (match, psbuttonName) => {
+  const psbuttonData = psbuttonMapping[psbuttonName.toLowerCase()];
+  if (psbuttonData !== undefined) {
+    const psbuttonElement = document.createElement('div');
+    psbuttonElement.classList.add('psbutton');
+    psbuttonElement.style.backgroundPosition = `-${psbuttonData.start}px 0`;
+    psbuttonElement.style.width = `${psbuttonData.end - psbuttonData.start}px`;
+    return psbuttonElement.outerHTML + ' '; // Add a space after each button
+  }
+  return match; // If no mapping found, keep the original text
+});
+      });
+    }
+
+    replaceTextWithPSButtons();
+</script>
+
+<script>
+    const alphabetArtMapping = {
+      '#': { start: 0, end: 64 },
+      'a': { start: 64, end: 128 },
+      'b': { start: 128, end: 192 },
+      'c': { start: 192, end: 256 },
+      'd': { start: 256, end: 320 },
+      'e': { start: 320, end: 384 },
+      'f': { start: 384, end: 448 },
+      'g': { start: 448, end: 512 },
+      'h': { start: 512, end: 576 },
+      'i': { start: 576, end: 640 },
+      'j': { start: 640, end: 704 },
+      'k': { start: 704, end: 768 },
+      'l': { start: 768, end: 832 },
+      'm': { start: 832, end: 896 },
+      'n': { start: 896, end: 960 },
+      'o': { start: 960, end: 1024 },
+      'p': { start: 1024, end: 1088 },
+      'q': { start: 1088, end: 1152 },
+      'r': { start: 1152, end: 1216 },
+      's': { start: 1216, end: 1280 },
+      't': { start: 1280, end: 1344 },
+      'u': { start: 1344, end: 1408 },
+      'v': { start: 1408, end: 1472 },
+      'w': { start: 1472, end: 1536 },
+      'x': { start: 1536, end: 1600 },
+      'y': { start: 1600, end: 1664 },
+      'z': { start: 1664, end: 1728 },
+      
+    };
+
+    function replaceTextWithalphabetArt() {
+      const paragraphs = document.getElementsByTagName('alph');
+
+      Array.from(paragraphs).forEach(paragraph => {
+        const text = paragraph.innerText;
+        const regex = /\((#|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z)\)/ig;
+
+        paragraph.innerHTML = text.replace(regex, (match, alphimg) => {
+          const alphabetData = alphabetArtMapping[alphimg.toLowerCase()];
+          if (alphabetData !== undefined) {
+            const alphabetElement = document.createElement('div');
+            alphabetElement.classList.add('alphabet');
+            alphabetElement.style.backgroundPosition = `-${alphabetData.start}px 0`;
+            alphabetElement.style.width = `${alphabetData.end - alphabetData.start}px`;
+            return alphabetElement.outerHTML + ' ';
+          }
+          return match; // If no mapping found, keep the original text
+        });
+      });
+    }
+
+    replaceTextWithalphabetArt();
+  </script>
+  
+  <script>
+    const combinedButton = document.getElementById("combinedButton");
+    const wrapper = document.querySelector(".wrapper");
+    let isDarkMode = false;
+
+    // Check if a "darkMode" cookie exists and set the initial mode accordingly
+    const darkModeCookie = getCookie("darkMode");
+    if (darkModeCookie) {
+      isDarkMode = darkModeCookie === "true";
+      wrapper.classList.toggle("dark-mode", isDarkMode);
+      combinedButton.innerHTML = isDarkMode ? "☀️" : "🌙";
+    }
+
+    combinedButton.addEventListener("click", () => {
+      isDarkMode = !isDarkMode;
+      wrapper.classList.toggle("dark-mode", isDarkMode);
+      combinedButton.innerHTML = isDarkMode ? "☀️" : "🌙";
+
+      // Set a "darkMode" cookie to remember the user's preference
+      setCookie("darkMode", isDarkMode);
+
+      // Save the state of the button to localStorage
+      localStorage.setItem("buttonState", isDarkMode ? "night" : "day");
+    });
+
+    // Function to get a cookie's value
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    // Function to set a cookie
+    function setCookie(name, value) {
+      document.cookie = `${name}=${value}; path=/`;
+    }
+    
+    // Check localStorage for button state on page load
+    const savedButtonState = localStorage.getItem("buttonState");
+    if (savedButtonState) {
+      isDarkMode = savedButtonState === "night";
+      wrapper.classList.toggle("dark-mode", isDarkMode);
+      combinedButton.innerHTML = isDarkMode ? "☀️" : "🌙";
+    }
+  </script>
+
+<!--PS1 Cover Art Starts Here -->
+  <script>
+    const ps1covers1ArtMapping = {
+      'ps1game1': { start: 0, end: 128 },
+      'ps1game2': { start: 128, end: 256 },
+      'ps1game3': { start: 256, end: 384 },
+      'ps1game4': { start: 384, end: 512 },
+      'ps1game5': { start: 512, end: 640 },
+      'ps1game6': { start: 640, end: 768 },
+      'ps1game7': { start: 768, end: 896 },
+      'ps1game8': { start: 896, end: 1024 },
+      'ps1game9': { start: 1024, end: 1152 },
+      'ps1game10': { start: 1152, end: 1280 },
+      
+    };
+
+    function replaceTextWithPS1Covers1Art() {
+      const paragraphs = document.getElementsByTagName('PS1art1');
+
+      Array.from(paragraphs).forEach(paragraph => {
+        const text = paragraph.innerText;
+        const regex = /\((ps1game1|ps1game2|ps1game3|ps1game4|ps1game5|ps1game6|ps1game7|ps1game8|ps1game9|ps1game10)\)/ig;
+
+        paragraph.innerHTML = text.replace(regex, (match, ps1game) => {
+          const ps1covers1Data = ps1covers1ArtMapping[ps1game.toLowerCase()];
+          if (ps1covers1Data !== undefined) {
+            const ps1covers1Element = document.createElement('div');
+            ps1covers1Element.classList.add('ps1covers1');
+            ps1covers1Element.style.backgroundPosition = `-${ps1covers1Data.start}px 0`;
+            ps1covers1Element.style.width = `${ps1covers1Data.end - ps1covers1Data.start}px`;
+            return ps1covers1Element.outerHTML + ' ';
+          }
+          return match; // If no mapping found, keep the original text
+        });
+      });
+    }
+
+    replaceTextWithPS1Covers1Art();
+  </script>
+   
+  <script>
+    const ps1covers2ArtMapping = {
+      'ps1game11': { start: 0, end: 128 },
+      'ps1game12': { start: 128, end: 256 },
+      'ps1game13': { start: 256, end: 384 },
+      'ps1game14': { start: 384, end: 512 },
+      'ps1game15': { start: 512, end: 640 },
+      'ps1game16': { start: 640, end: 768 },
+      'ps1game17': { start: 768, end: 896 },
+      'ps1game18': { start: 896, end: 1024 },
+      'ps1game19': { start: 1024, end: 1152 },
+      'ps1game20': { start: 1152, end: 1280 },
+      
+    };
+
+    function replaceTextWithps1covers2Art() {
+      const paragraphs = document.getElementsByTagName('PS1art2');
+
+      Array.from(paragraphs).forEach(paragraph => {
+        const text = paragraph.innerText;
+        const regex = /\((ps1game11|ps1game12|ps1game13|ps1game14|ps1game15|ps1game16|ps1game17|ps1game18|ps1game19|ps1game20)\)/ig;
+
+        paragraph.innerHTML = text.replace(regex, (match, ps1game) => {
+          const ps1covers2Data = ps1covers2ArtMapping[ps1game.toLowerCase()];
+          if (ps1covers2Data !== undefined) {
+            const ps1covers2Element = document.createElement('div');
+            ps1covers2Element.classList.add('ps1covers2');
+            ps1covers2Element.style.backgroundPosition = `-${ps1covers2Data.start}px 0`;
+            ps1covers2Element.style.width = `${ps1covers2Data.end - ps1covers2Data.start}px`;
+            return ps1covers2Element.outerHTML + ' ';
+          }
+          return match; // If no mapping found, keep the original text
+        });
+      });
+    }
+
+    replaceTextWithps1covers2Art();
+  </script> 
+</body>
+</html>
