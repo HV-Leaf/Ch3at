@@ -2,10 +2,6 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
     * {
@@ -144,31 +140,6 @@
       }
     }
     </style>
-    <style>
-    .redcode {
-      position: relative;
-      font-size: 13px;
-      margin: 0;
-      font-weight: bold;
-      background-image: url("https://hv-leaf.github.io/Ch3at/ch3ticons/backend/code2.gif");
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: 4px;
-      background-size: 128px 128px;
-      background-repeat: repeat;
-      animation: scrollText 2s linear infinite;
-    }
-
-    @keyframes scrollText {
-      0% {
-        background-position: 0 100%;
-      }
-      100% {
-        background-position: 0 0;
-      }
-    }
-    </style>
     
     <style>
         table {
@@ -180,37 +151,12 @@
             padding: 5px;
         }
 </style>
-
-<style>
-    .psbutton {
-      display: inline-block;
-      height: 32px;
-      background-image: url('https://hv-leaf.github.io/Ch3at/ch3ticons/backend/PSButtons.png');
-      background-size: 480px 32px;
-    }
-  </style>
   
   <style>
     .alphabet {
       display: inline-block;
       height: 64px;
       background-image: url('https://hv-leaf.github.io/Ch3at/ch3ticons/backend/ALPHABET.png');   
-  </style>
-  
-     <style>
-    .ps1covers1 {
-      display: inline-block;
-      height: 128px;
-      background-image: url('https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/covers/ps1sprite1.jpg');
-      
-  </style> 
-
-  <style>
-    .ps1covers2 {
-      display: inline-block;
-      height: 128px;
-      background-image: url('https://hv-leaf.github.io/Ch3at/ch3ticons/ps1/covers/ps1sprite2.jpg');
-      
   </style>
 
 </head>
@@ -716,50 +662,6 @@ document.addEventListener('contextmenu', function (e) {
 </script>
 
 <script>
-    const psbuttonMapping = {
-      'up': { start: 0, end: 30 },
-      'down': { start: 30, end: 60 },
-      'left': { start: 60, end: 90 },
-      'right': { start: 90, end: 120 },
-      'px': { start: 120, end: 150 },
-      'po': { start: 150, end: 180 },
-      'sq': { start: 180, end: 210 },
-      't': { start: 210, end: 240 },
-      'pselect': { start: 240, end: 270 },
-      'pstart': { start: 270, end: 297 },
-      'pr1': { start: 297, end: 330 },
-      'pr2': { start: 330, end: 360 },
-      'pl1': { start: 360, end: 390 },
-      'pl2': { start: 390, end: 420 },
-      'pr3': { start: 420, end: 450 },
-      'pl3': { start: 450, end: 480 },
-    };
-
-    function replaceTextWithPSButtons() {
-      const paragraphs = document.getElementsByTagName('p');
-
-      Array.from(paragraphs).forEach(paragraph => {
-        const text = paragraph.innerText;
-        const regex = /\((up|down|left|right|PX|PO|SQ|T|PSELECT|PSTART|PR1|PR2|PL1|PL2|PR3|PL3)\)/ig;
-
-paragraph.innerHTML = text.replace(regex, (match, psbuttonName) => {
-  const psbuttonData = psbuttonMapping[psbuttonName.toLowerCase()];
-  if (psbuttonData !== undefined) {
-    const psbuttonElement = document.createElement('div');
-    psbuttonElement.classList.add('psbutton');
-    psbuttonElement.style.backgroundPosition = `-${psbuttonData.start}px 0`;
-    psbuttonElement.style.width = `${psbuttonData.end - psbuttonData.start}px`;
-    return psbuttonElement.outerHTML + ' '; // Add a space after each button
-  }
-  return match; // If no mapping found, keep the original text
-});
-      });
-    }
-
-    replaceTextWithPSButtons();
-</script>
-
-<script>
     const alphabetArtMapping = {
       '#': { start: 0, end: 64 },
       'a': { start: 64, end: 128 },
@@ -861,83 +763,5 @@ paragraph.innerHTML = text.replace(regex, (match, psbuttonName) => {
     }
   </script>
 
-<!--PS1 Cover Art Starts Here -->
-  <script>
-    const ps1covers1ArtMapping = {
-      'ps1game1': { start: 0, end: 128 },
-      'ps1game2': { start: 128, end: 256 },
-      'ps1game3': { start: 256, end: 384 },
-      'ps1game4': { start: 384, end: 512 },
-      'ps1game5': { start: 512, end: 640 },
-      'ps1game6': { start: 640, end: 768 },
-      'ps1game7': { start: 768, end: 896 },
-      'ps1game8': { start: 896, end: 1024 },
-      'ps1game9': { start: 1024, end: 1152 },
-      'ps1game10': { start: 1152, end: 1280 },
-      
-    };
-
-    function replaceTextWithPS1Covers1Art() {
-      const paragraphs = document.getElementsByTagName('PS1art1');
-
-      Array.from(paragraphs).forEach(paragraph => {
-        const text = paragraph.innerText;
-        const regex = /\((ps1game1|ps1game2|ps1game3|ps1game4|ps1game5|ps1game6|ps1game7|ps1game8|ps1game9|ps1game10)\)/ig;
-
-        paragraph.innerHTML = text.replace(regex, (match, ps1game) => {
-          const ps1covers1Data = ps1covers1ArtMapping[ps1game.toLowerCase()];
-          if (ps1covers1Data !== undefined) {
-            const ps1covers1Element = document.createElement('div');
-            ps1covers1Element.classList.add('ps1covers1');
-            ps1covers1Element.style.backgroundPosition = `-${ps1covers1Data.start}px 0`;
-            ps1covers1Element.style.width = `${ps1covers1Data.end - ps1covers1Data.start}px`;
-            return ps1covers1Element.outerHTML + ' ';
-          }
-          return match; // If no mapping found, keep the original text
-        });
-      });
-    }
-
-    replaceTextWithPS1Covers1Art();
-  </script>
-   
-  <script>
-    const ps1covers2ArtMapping = {
-      'ps1game11': { start: 0, end: 128 },
-      'ps1game12': { start: 128, end: 256 },
-      'ps1game13': { start: 256, end: 384 },
-      'ps1game14': { start: 384, end: 512 },
-      'ps1game15': { start: 512, end: 640 },
-      'ps1game16': { start: 640, end: 768 },
-      'ps1game17': { start: 768, end: 896 },
-      'ps1game18': { start: 896, end: 1024 },
-      'ps1game19': { start: 1024, end: 1152 },
-      'ps1game20': { start: 1152, end: 1280 },
-      
-    };
-
-    function replaceTextWithps1covers2Art() {
-      const paragraphs = document.getElementsByTagName('PS1art2');
-
-      Array.from(paragraphs).forEach(paragraph => {
-        const text = paragraph.innerText;
-        const regex = /\((ps1game11|ps1game12|ps1game13|ps1game14|ps1game15|ps1game16|ps1game17|ps1game18|ps1game19|ps1game20)\)/ig;
-
-        paragraph.innerHTML = text.replace(regex, (match, ps1game) => {
-          const ps1covers2Data = ps1covers2ArtMapping[ps1game.toLowerCase()];
-          if (ps1covers2Data !== undefined) {
-            const ps1covers2Element = document.createElement('div');
-            ps1covers2Element.classList.add('ps1covers2');
-            ps1covers2Element.style.backgroundPosition = `-${ps1covers2Data.start}px 0`;
-            ps1covers2Element.style.width = `${ps1covers2Data.end - ps1covers2Data.start}px`;
-            return ps1covers2Element.outerHTML + ' ';
-          }
-          return match; // If no mapping found, keep the original text
-        });
-      });
-    }
-
-    replaceTextWithps1covers2Art();
-  </script> 
 </body>
 </html>
