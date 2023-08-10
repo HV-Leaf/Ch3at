@@ -140,17 +140,6 @@
       }
     }
     </style>
-    
-    <style>
-        table {
-            border: none;
-            border-collapse: collapse;
-        }
-        td, th {
-            border: none;
-            padding: 5px;
-        }
-</style>
   
   <style>
     .alphabet {
@@ -660,62 +649,6 @@ document.addEventListener('contextmenu', function (e) {
   e.preventDefault();
 });
 </script>
-
-<script>
-    const alphabetArtMapping = {
-      '#': { start: 0, end: 64 },
-      'a': { start: 64, end: 128 },
-      'b': { start: 128, end: 192 },
-      'c': { start: 192, end: 256 },
-      'd': { start: 256, end: 320 },
-      'e': { start: 320, end: 384 },
-      'f': { start: 384, end: 448 },
-      'g': { start: 448, end: 512 },
-      'h': { start: 512, end: 576 },
-      'i': { start: 576, end: 640 },
-      'j': { start: 640, end: 704 },
-      'k': { start: 704, end: 768 },
-      'l': { start: 768, end: 832 },
-      'm': { start: 832, end: 896 },
-      'n': { start: 896, end: 960 },
-      'o': { start: 960, end: 1024 },
-      'p': { start: 1024, end: 1088 },
-      'q': { start: 1088, end: 1152 },
-      'r': { start: 1152, end: 1216 },
-      's': { start: 1216, end: 1280 },
-      't': { start: 1280, end: 1344 },
-      'u': { start: 1344, end: 1408 },
-      'v': { start: 1408, end: 1472 },
-      'w': { start: 1472, end: 1536 },
-      'x': { start: 1536, end: 1600 },
-      'y': { start: 1600, end: 1664 },
-      'z': { start: 1664, end: 1728 },
-      
-    };
-
-    function replaceTextWithalphabetArt() {
-      const paragraphs = document.getElementsByTagName('alph');
-
-      Array.from(paragraphs).forEach(paragraph => {
-        const text = paragraph.innerText;
-        const regex = /\((#|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z)\)/ig;
-
-        paragraph.innerHTML = text.replace(regex, (match, alphimg) => {
-          const alphabetData = alphabetArtMapping[alphimg.toLowerCase()];
-          if (alphabetData !== undefined) {
-            const alphabetElement = document.createElement('div');
-            alphabetElement.classList.add('alphabet');
-            alphabetElement.style.backgroundPosition = `-${alphabetData.start}px 0`;
-            alphabetElement.style.width = `${alphabetData.end - alphabetData.start}px`;
-            return alphabetElement.outerHTML + ' ';
-          }
-          return match; // If no mapping found, keep the original text
-        });
-      });
-    }
-
-    replaceTextWithalphabetArt();
-  </script>
   
   <script>
     const combinedButton = document.getElementById("combinedButton");
