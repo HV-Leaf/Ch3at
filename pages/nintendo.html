@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .wrapper {
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    nav .m-menu__checkbox {
+        display: none;
+    }
+
+    nav label.m-menu__toggle {
+        cursor: pointer;
+    }
+
+    nav .m-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.35s;
+        z-index: 1;
+        overflow: hidden;
+        background-color: #99AAB5; /* day header color */
+    }
+
+    nav .m-menu__header {
+        display: flex;
+        align-items: center;
+    }
+
+    nav .m-menu__header span {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav .m-menu .m-menu {
+        transform: translate3d(100%, 0, 0);
+    }
+
+    nav .m-menu ul {
+        height: 100%;
+        overflow-y: auto;
+        background-color: #B9BBBE; /* day body */
+    }
+
+    nav .m-menu ul li a,
+    nav .m-menu ul li label {
+        display: block;
+        text-align: left;
+        padding: 5px 5px;
+        line-height: 47px;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1rem;
+        position: relative;
+        color: #000; /* text color for day mode */
+    }
+
+    nav .m-menu__checkbox:checked ~ .m-menu {
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* On dark mode toggle */
+    .dark-mode {
+    }
+
+    .dark-mode nav .m-menu {
+        background-color: #1E1E1E; /* Dark header color */
+    }
+
+    .dark-mode nav .m-menu ul {
+        background-color: #272727; /* Dark body color */
+    }
+
+    .dark-mode nav .m-menu ul li a,
+    .dark-mode nav .m-menu ul li label {
+        color: #FFFFFF; /* White text color for night mode */
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* White glow effect */
+    }
+
+    /* Additional styling for the combined button */
+    #combinedButton {
+        background-color: transparent;
+        border: none;
+        padding: 5px; /* Added padding to make the button clickable */
+        font-size: 20px; /* Adjust the font size to make the emoji visible */
+        margin: 0;
+        cursor: pointer;
+        outline: none;
+    }
+</style>
+
+
+
+<style>  
+.greencode {
+      position: relative;
+      font-size: 13px;
+      margin: 0;
+      font-weight: bold;
+      background-image: url("https://hv-leaf.github.io/Ch3at/ch3ticons/backend/code.gif");
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 4px;
+      background-size: 128px 128px;
+      background-repeat: repeat;
+      animation: scrollText 2s linear infinite;
+    }
+
+    @keyframes scrollText {
+      0% {
+        background-position: 0 100%;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+    </style>
+  
+  <style>
+    .alphabet {
+      display: inline-block;
+      height: 64px;
+      background-image: url('https://hv-leaf.github.io/Ch3at/ch3ticons/backend/ALPHABET.png');   
+  </style>
+
+</head>
+
+<!-- HTML Starts -->
+<body>
+  <div class="wrapper">
+    <!-- Start Header -->
+    <nav>
+      <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox" checked>
+<div class="m-menu">
+<div class="m-menu__header">
+<a href="https://hv-leaf.github.io/Ch3at/" rel="noopener noreferrer">
+  <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
+    <path d="M19 12H6M12 5l-7 7 7 7"/>
+  </svg>
+</a>
+<span><img src="https://hv-leaf.github.io/Ch3at/ch3ticons/backend/nintendo.png" height=32 width=128></span><button id="combinedButton">🌙</button> </div><ul>
+        <!-- Catalog starts here -->   
+
+<!-- NES -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/nes/nes.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/nes/logo.png" height=32 width=128>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End NES -->
+
+<!-- Gameboy -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/gb/gb.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/gb/logo.png" height=32 width=128>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End Gameboy -->
+
+<!-- SNES -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/snes/snes.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/snes/logo.png" height=32 width=128>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End SNES -->
+
+<!-- N64 -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/n64/n64.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/n64/logo.png" height=64 width=64>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End N64 -->
+
+<!-- Gameboy Color -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/gbc/gbc.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/gbc/logo.png" height=32 width=128>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End Gameboy Color -->
+
+<!-- Gameboy Advance -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/gba/gba.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/gba/logo.png" height=32 width=128>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End Gameboy Advance -->
+
+<!-- GameCube -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/gamecube/gamecube.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/gamecube/logo.png" height=32 width=128>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End GameCube -->
+
+<!-- DS -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/ds/ds.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/ds/logo.png" height=32 width=128>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End DS -->
+
+<!-- Wii -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/wii/wii.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/wii/logo.png" height=32 width=80>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End Wii -->
+
+<!-- 3DS -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/3ds/3ds.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/3ds/logo.png" height=32 width=128>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End 3DS -->
+
+<!-- Wii U -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/wiiu/wiiu.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/wiiu/logo.png" height=32 width=128>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End Wii U -->
+
+<!-- Switch -->
+<li>
+  <label>
+   <a href="https://hv-leaf.github.io/Ch3at/pages/switch/switch.html">
+  <img src="https://hv-leaf.github.io/Ch3at/ch3ticons/switch/logo.png" height=32 width=128>
+  <div class="m-menu">
+    <div class="m-menu__header">
+  </label>
+    </div>
+    <ul>
+    </a>
+    </ul>
+</li>
+<!-- End Switch -->
+
+
+    <br></br><br></br></ul>
+  </div>
+</li>
+<!-- End Microsoft Company -->
+
+<script>
+  document.addEventListener('copy', function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener('cut', function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener('paste', function (e) {
+  e.preventDefault();
+});
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+</script>
+  
+  <script>
+    const combinedButton = document.getElementById("combinedButton");
+    const wrapper = document.querySelector(".wrapper");
+    let isDarkMode = false;
+
+    // Check if a "darkMode" cookie exists and set the initial mode accordingly
+    const darkModeCookie = getCookie("darkMode");
+    if (darkModeCookie) {
+      isDarkMode = darkModeCookie === "true";
+      wrapper.classList.toggle("dark-mode", isDarkMode);
+      combinedButton.innerHTML = isDarkMode ? "☀️" : "🌙";
+    }
+
+    combinedButton.addEventListener("click", () => {
+      isDarkMode = !isDarkMode;
+      wrapper.classList.toggle("dark-mode", isDarkMode);
+      combinedButton.innerHTML = isDarkMode ? "☀️" : "🌙";
+
+      // Set a "darkMode" cookie to remember the user's preference
+      setCookie("darkMode", isDarkMode);
+
+      // Save the state of the button to localStorage
+      localStorage.setItem("buttonState", isDarkMode ? "night" : "day");
+    });
+
+    // Function to get a cookie's value
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    // Function to set a cookie
+    function setCookie(name, value) {
+      document.cookie = `${name}=${value}; path=/`;
+    }
+    
+    // Check localStorage for button state on page load
+    const savedButtonState = localStorage.getItem("buttonState");
+    if (savedButtonState) {
+      isDarkMode = savedButtonState === "night";
+      wrapper.classList.toggle("dark-mode", isDarkMode);
+      combinedButton.innerHTML = isDarkMode ? "☀️" : "🌙";
+    }
+  </script>
+
+</body>
+</html>
