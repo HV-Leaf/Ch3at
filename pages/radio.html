@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom</title>
+    <style>
+        /* Your CSS styling here */
+    </style>
+</head>
+<body>
+    <div class="container" id="username-container">
+        <h2>Welcome to the Chatroom</h2>
+        <input type="text" class="username-input glow-border" id="username-input" placeholder="Enter your username">
+        <button class="button glow-border" id="username-submit">Enter Chatroom</button>
+    </div>
+    <div class="container hidden" id="chatroom-container">
+        <h2>Chatroom</h2>
+        <div id="chat-messages"></div>
+        <input type="text" class="message-input glow-border" id="message-input" placeholder="Type your message">
+        <button class="button glow-border" id="send-button">Send</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+    <script>
+        const usernameContainer = document.getElementById("username-container");
+        const chatroomContainer = document.getElementById("chatroom-container");
+        const usernameInput = document.getElementById("username-input");
+        const usernameSubmitButton = document.getElementById("username-submit");
+        const chatMessages = document.getElementById("chat-messages");
+        const messageInput = document.getElementById("message-input");
+        const sendButton = document.getElementById("send-button");
+
+        let username = Cookies.get("username") || "";
+
+        // If a username cookie exists, skip username input
+        if (username) {
+            usernameContainer.classList.add("hidden");
+            chatroomContainer.classList.remove("hidden");
+        }
+
+        function updateChatHistory() {
+            chatMessages.innerHTML = "";
+            const chatHistory = Cookies.get("chatHistory") || "[]";
+            const messages = JSON.parse(chatHistory);
+            messages.forEach(({ username, message }) => {
+                const messageElement = document.createElement("div");
+                messageElement.className = "message";
+                messageElement.innerHTML = `<span class="username">${username}:</span> ${message}`;
+                chatMessages.appendChild(messageElement);
+            });
+        }
+
+        updateChatHistory();
+
+        usernameSubmitButton.addEventListener("click", () => {
+            const enteredUsername = usernameInput.value.trim();
+            if (enteredUsername !== "") {
+                username = enteredUsername;
+                Cookies.set("username", username);
+                usernameContainer.classList.add("hidden");
+                chatroomContainer.classList.remove("hidden");
+            }
+        });
+
+        sendButton.addEventListener("click", () => {
+            const message = messageInput.value.trim();
+            if (message !== "") {
+                const chatHistory = Cookies.get("chatHistory") || "[]";
+                const messages = JSON.parse(chatHistory);
+                messages.push({ username, message });
+                Cookies.set("chatHistory", JSON.stringify(messages));
+                updateChatHistory();
+                messageInput.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
