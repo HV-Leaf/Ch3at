@@ -1,56 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japan Adventure 2024</title>
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progress Bar with Text</title>
+<style>
+
+
+
         body {
             background-color: black;
+            background-image: url('https://wallpapercave.com/wp/wp2818709.jpg');
+    background-size: cover; /* This ensures the image covers the entire background */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
             color: white;
             font-family: 'Arial', sans-serif;
             text-align: center;
             padding-top: 50px;
         }
-        .title {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
+.title {
+  font-family: cursive;
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 15px #ff69b4, 0 0 20px #ff69b4, 0 0 25px #ff69b4, 0 0 30px #ff69b4, 0 0 35px #ff69b4;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 15px #ff69b4, 0 0 20px #ff69b4, 0 0 25px #ff69b4, 0 0 30px #ff69b4, 0 0 35px #ff69b4; }
+  to { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4, 0 0 60px #ff69b4, 0 0 70px #ff69b4; }
+}
         .subtext {
             font-size: 1.5em;
             margin-bottom: 20px;
         }
-        .progress-container {
-            width: 80%;
-            margin: 0 auto;
+        
+        .total-text {
+            font-size: 1em;
+            color: white; /* Adjust color to match the background */
+            margin-top: 10px; /* Adjust margin for spacing */
         }
-        .progress-bar {
-            background-color: white;
-            border-radius: 25px;
-            padding: 3px;
-            position: relative;
-        }
-        .progress {
-            background-color: #00ff00;
-            width: 24%;
-            height: 30px;
-            border-radius: 20px;
-            position: relative;
-        }
-        .progress-text {
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 0;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
-        .earned {
-            color: black;
-        }
-        .remaining {
-            color: white;
+        
+        p {
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.9); /* Adjust spread and opacity for a bolder and darker shadow */
+}
+    </style>
+
+<style>
+  .progress-bar {
+    width: 100%;
+    background-color: #0A2229;
+    border-radius: 5px;
+    padding: 3px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .moneyprogress {
+    width: 24%; /* Change this to adjust the progress */
+    background-color: #4caf50;
+    border-radius: 5px;
+    height: 20px;
+    position: relative;
+    overflow: visible; /* Allow overflow for absolutely positioned elements */
+  }
+  
+  .travelprogress {
+    width: 0%; /* Change this to adjust the progress */
+    background-color: #4caf50;
+    border-radius: 5px;
+    height: 20px;
+    position: relative;
+    overflow: visible; /* Allow overflow for absolutely positioned elements */
+  }
+  
+    .completeprogress {
+    width: 100%; /* Change this to adjust the progress */
+    background-color: #4caf50;
+    border-radius: 5px;
+    height: 20px;
+    position: relative;
+    overflow: visible; /* Allow overflow for absolutely positioned elements */
+  }
+
+  .carrot {
+    position: absolute;
+    left: calc(100% - 25px); /* Adjust the position as needed */
+    top: 0;
+    line-height: 20px;
+  }
+  
+  .train {
+    position: absolute;
+    left: calc(100% - 0px); /* Adjust the position as needed */
+    top: 0;
+    line-height: 20px;
+  }
+  
+    .hotel {
+    position: absolute;
+    left: calc(100% - 90px); /* Adjust the position as needed */
+    top: 0;
+    line-height: 20px;
+  }
+
+  .progress-text-left {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .progress-text-right {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .progress-text-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+</style>
+</head>
+<body>
+<h2><div class="title">Japan Adventure 2024</div></h2>
+
+<br>
+
+<p>Spending Money</p>
+<div class="progress-bar">
+  <div class="moneyprogress">
+    <div class="carrot">🥕</div>
+  </div>
+  <div class="progress-text-left">$240.00</div>
+  <div class="progress-text-right">$1,000.00</div>
+</div>
+
+<p></p>
+<div class="progress-bar">
+  <div class="moneyprogress">
+    <div class="carrot">🍁</div>
+  </div>
+  <div class="progress-text-left">$240.00</div>
+  <div class="progress-text-right">$1,000.00</div>
+</div>
+<p></p>
+
+<p>In Japan Travel</p>
+<div class="progress-bar">
+  <div class="travelprogress">
+  <div class="train">🚆</div>
+  </div>
+    <div class="progress-text-right">$250.00</div>
+  
+</div>
+<p></p>
+
+<p>Plane</p>
+<div class="progress-bar">
+  <div class="completeprogress">
+  </div>
+  <div class="progress-text-center">✈️</div>
+    <div class="progress-text-right">$2,027.20</div>
+  
+</div>
+<p></p>
+
+<p>Hotel</p>
+<div class="progress-bar">
+  <div class="completeprogress">
+  </div>
+  <div class="progress-text-center">🏨</div>
+    <div class="progress-text-right">$768.70</div>
+  
+</div>
+<p></p>
+
+
+<p>Food</p>
+<div class="progress-bar">
+  <div class="completeprogress">
+  </div>
+    <div class="progress-text-center">🍣</div>
+  <div class="progress-text-right">$500.00</div>
+</div>
+
+
+
+</body>
+</html>
