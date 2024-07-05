@@ -57,8 +57,17 @@
     position: relative;
   }
 
-  .moneyprogress {
-    width: 24%; /* Change this to adjust the progress */
+  .moneyprogresscarrot {
+    width: 8%; /* Change this to adjust the progress */
+    background-color: #4caf50;
+    border-radius: 5px;
+    height: 20px;
+    position: relative;
+    overflow: visible; /* Allow overflow for absolutely positioned elements */
+  }
+
+         .moneyprogressleaf {
+    width: 6%; /* Change this to adjust the progress */
     background-color: #4caf50;
     border-radius: 5px;
     height: 20px;
@@ -135,16 +144,15 @@
 
 <p>Spending Money</p>
 <div class="progress-bar">
-  <div class="moneyprogress">
-    <div class="carrot">🥕</div>
-  </div>
+  <div class="moneyprogresscarrot">🥕</div>
+
   <div class="progress-text-left">$80.00</div>
   <div class="progress-text-right">$1,000.00</div>
 </div>
 
 <p></p>
 <div class="progress-bar">
-  <div class="moneyprogress">
+  <div class="moneyprogressleaf">
     <div class="carrot">🍁</div>
   </div>
   <div class="progress-text-left">$60.00</div>
